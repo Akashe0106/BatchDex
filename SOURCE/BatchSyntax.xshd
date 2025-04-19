@@ -1,0 +1,206 @@
+<?xml version="1.0"?>
+<SyntaxDefinition name="Batch" extensions=".bat;.cmd" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
+
+	<Color name="Comment" foreground="#FF57A64A" exampleText=":: comment"/>
+	<Color name="Command" foreground="#FF569CD6" fontWeight="bold" exampleText="ECHO OFF"/>
+	<Color name="Variable" foreground="#FF9CDCFE" exampleText="%VAR% %1 %~dp0 %%A"/>
+	<Color name="ParameterExpansion" foreground="#FF4EC9B0" exampleText="%VAR:A=B%"/>
+	<Color name="Label" foreground="#FF4EC9B0" fontStyle="italic" exampleText=":MyLabel"/>
+	<Color name="String" foreground="#FFD69D85" exampleText="Hello World"/>
+	<Color name="Operator" foreground="#FFD4D4D4" fontWeight="bold" exampleText="EQU &gt; &amp;&amp;"/>
+	<Color name="Keyword" foreground="#FFC586C0" exampleText="IF EXIST GOTO CALL SET /A"/>
+	<Color name="Number" foreground="#FFB5CEA8" exampleText="123"/>
+	<Color name="SpecialChar" foreground="#FFDCDCAA" exampleText="^"/>
+	<Color name="CommandOption" foreground="#FFCE9178" exampleText="/A /F"/>
+
+	<RuleSet>
+
+		<Span color="Comment" begin="::" />
+		<Span color="Comment" begin="rem(?=\s|$)"/>
+		<Span color="Comment" begin="@rem(?=\s|$)"/>
+
+		<Span color="String" begin='"' end='"' multiline="false">
+			<RuleSet>
+				<Rule color="SpecialChar">""</Rule>
+			</RuleSet>
+		</Span>
+
+		<Rule color="Label">
+			^\s*:\w+
+		</Rule>
+
+		<Rule color="Variable">
+			%~?[fdpnxsatz]*\d|%\w+%|%%[a-zA-Z]
+		</Rule>
+		<Rule color="ParameterExpansion">
+			%\w+:[^%]*=%[^%]*%
+		</Rule>
+
+		<Rule color="Number">\b\d+\b</Rule>
+
+		<Rule color="SpecialChar">
+			\^.
+		</Rule>
+
+		<Rule color="Operator">
+			^@
+		</Rule>
+
+		<Keywords color="Operator" fontWeight="bold">
+			<Word>EQU</Word>
+			<Word>NEQ</Word>
+			<Word>LSS</Word>
+			<Word>LEQ</Word>
+			<Word>GTR</Word>
+			<Word>GEQ</Word>
+			<Word>></Word>
+			<Word>>></Word>
+			<Word>&lt;</Word>
+			<Word>|</Word>
+			<Word>2></Word>
+			<Word>1></Word>
+			<Word>&amp;&gt;</Word>
+			<Word>&gt;&amp;</Word>
+			<Word>&amp;</Word>
+			<Word>&amp;&amp;</Word>
+			<Word>||</Word>
+			<Word>=</Word>
+			<Word>+</Word>
+			<Word>-</Word>
+			<Word>*</Word>
+			<Word>/</Word>
+			<Word>%</Word>
+			<Word>^</Word>
+			<Word>&amp;</Word>
+			<Word>|</Word>
+			<Word>&lt;&lt;</Word>
+			<Word>>></Word>
+		</Keywords>
+
+		<Rule color="CommandOption">
+			[\s=:,;/\-][a-zA-Z0-9\?\*]+
+		</Rule>
+
+		<Keywords color="Command">
+			<Word>ASSOC</Word>
+			<Word>ATTRIB</Word>
+			<Word>CD</Word>
+			<Word>CHDIR</Word>
+			<Word>CHKDSK</Word>
+			<Word>CHKNTFS</Word>
+			<Word>CLS</Word>
+			<Word>COMP</Word>
+			<Word>COMPACT</Word>
+			<Word>CONVERT</Word>
+			<Word>COPY</Word>
+			<Word>DEL</Word>
+			<Word>DIR</Word>
+			<Word>DISKCOMP</Word>
+			<Word>DISKCOPY</Word>
+			<Word>ERASE</Word>
+			<Word>FC</Word>
+			<Word>FIND</Word>
+			<Word>FINDSTR</Word>
+			<Word>FORMAT</Word>
+			<Word>FTYPE</Word>
+			<Word>LABEL</Word>
+			<Word>MD</Word>
+			<Word>MKDIR</Word>
+			<Word>MKLINK</Word>
+			<Word>MODE</Word>
+			<Word>MORE</Word>
+			<Word>MOVE</Word>
+			<Word>OPENFILES</Word>
+			<Word>PRINT</Word>
+			<Word>PUSHD</Word>
+			<Word>POPD</Word>
+			<Word>RD</Word>
+			<Word>RECOVER</Word>
+			<Word>REN</Word>
+			<Word>RENAME</Word>
+			<Word>REPLACE</Word>
+			<Word>RMDIR</Word>
+			<Word>ROBOCOPY</Word>
+			<Word>SORT</Word>
+			<Word>SUBST</Word>
+			<Word>TREE</Word>
+			<Word>TYPE</Word>
+			<Word>VERIFY</Word>
+			<Word>VOL</Word>
+			<Word>XCOPY</Word>
+			<Word>ARP</Word>
+			<Word>FTP</Word>
+			<Word>GETMAC</Word>
+			<Word>HOSTNAME</Word>
+			<Word>IPCONFIG</Word>
+			<Word>NBTSTAT</Word>
+			<Word>NET</Word>
+			<Word>NETSH</Word>
+			<Word>NETSTAT</Word>
+			<Word>NSLOOKUP</Word>
+			<Word>PATHPING</Word>
+			<Word>PING</Word>
+			<Word>ROUTE</Word>
+			<Word>SYSTEMINFO</Word>
+			<Word>TELNET</Word>
+			<Word>TFTP</Word>
+			<Word>TRACERT</Word>
+			<Word>BREAK</Word>
+			<Word>CACLS</Word>
+			<Word>ICACLS</Word>
+			<Word>CALL</Word>
+			<Word>CMD</Word>
+			<Word>COLOR</Word>
+			<Word>DATE</Word>
+			<Word>DRIVERQUERY</Word>
+			<Word>ECHO</Word>
+			<Word>ENDLOCAL</Word>
+			<Word>EXIT</Word>
+			<Word>FOR</Word>
+			<Word>GOTO</Word>
+			<Word>GPRESULT</Word>
+			<Word>GPUPDATE</Word>
+			<Word>HELP</Word>
+			<Word>IF</Word>
+			<Word>LOGOFF</Word>
+			<Word>PAUSE</Word>
+			<Word>POWERSHELL</Word>
+			<Word>PROMPT</Word>
+			<Word>REG</Word>
+			<Word>REM</Word>
+			<Word>RUNAS</Word>
+			<Word>SC</Word>
+			<Word>SCHTASKS</Word>
+			<Word>SET</Word>
+			<Word>SETLOCAL</Word>
+			<Word>SHIFT</Word>
+			<Word>SHUTDOWN</Word>
+			<Word>START</Word>
+			<Word>TASKKILL</Word>
+			<Word>TASKLIST</Word>
+			<Word>TIME</Word>
+			<Word>TIMEOUT</Word>
+			<Word>TITLE</Word>
+			<Word>VER</Word>
+			<Word>WAITFOR</Word>
+			<Word>WEVTUTIL</Word>
+			<Word>WHERE</Word>
+			<Word>WHOAMI</Word>
+			<Word>WMIC</Word>
+		</Keywords>
+
+		<Keywords color="Keyword">
+			<Word>EXIST</Word>
+			<Word>DEFINED</Word>
+			<Word>ERRORLEVEL</Word>
+			<Word>CMDEXTVERSION</Word>
+			<Word>ELSE</Word>
+			<Word>NOT</Word>
+			<Word>IN</Word>
+			<Word>DO</Word>
+			<Word>ON</Word>
+			<Word>OFF</Word>
+		</Keywords>
+
+	</RuleSet>
+</SyntaxDefinition>
