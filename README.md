@@ -19,7 +19,7 @@ BatchDex, Windows için geliştirilmiş, sözdizimi vurgulama özelliğine sahip
 
 Uygulamanın en son sürümünü kolayca kurmak için aşağıdaki adımları izleyin:
 
-1.  **GitHub Releases Sayfasına Gidin:** Projenin en son yayınlanmış sürümünü  adresinden bulun.
+1.  **GitHub Releases Sayfasına Gidin:** Projenin en son yayınlanmış sürümünü [RELEASES](https://github.com/Akashe0106/BatchDex/releases/tag/1.0.0) adresinden bulun.
 
 2.  **Kurulum Dosyalarını İndirin:** Yayınlanan sürümü `setup.exe` ve `BatchDexSetup.msi` dosyalarını bilgisayarınıza **aynı klasöre** indirin.
 
@@ -44,8 +44,7 @@ Uygulamanın en son sürümünü kolayca kurmak için aşağıdaki adımları iz
 *   ![.NET Framework 4.8](https://img.shields.io/badge/.NET_Framework_4.8-5C2D91?style=flat&logo=.net&logoColor=white)
 *   ![C#](https://img.shields.io/badge/C%23-239120?style=flat&logo=c-sharp&logoColor=white)
 *   ![WPF](https://img.shields.io/badge/WPF-5C2D91?style=flat&logo=windows&logoColor=white)
-*   **[ICSharpCode.AvalonEdit](https://github.com/icsharpcode/AvalonEdit)** (Metin düzenleyici ve sözdizimi vurgulama için)
-*   **Visual Studio Installer Projects** (Kurulum paketi oluşturmak için)
+*   **[ICSharpCode.AvalonEdit](https://github.com/icsharpcode/AvalonEdit)**
 
 ## Uyumluluk
 
